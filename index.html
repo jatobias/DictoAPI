@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DictoAPI - Animated Dictionary</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="p-8 text-gray-800">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-[#c9a27e] to-[#e2c5ac] text-[#5c2c06] p-4 rounded-xl shadow-md flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">📚 DictoAPI</h1>
+    <div class="relative">
+      <button id="bookmarkDropdownBtn" title="Bookmarks" class="p-2 bg-[#92400e] text-white rounded hover:bg-[#78350f]">🔖 Bookmarks</button>
+      <div id="bookmarkDropdown" class="absolute right-0 mt-2 w-64 bg-white border border-gray-300 rounded shadow-lg hidden z-10">
+        <ul id="bookmarkList" class="p-2 text-sm text-gray-800 space-y-2"></ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="max-w-5xl mx-auto bg-[#fff8f3] p-6 rounded-2xl shadow-2xl fade-in">
+    <div class="flex items-center gap-2 mb-4">
+      <input id="wordInput" type="text" placeholder="Search for a word..." class="flex-1 p-2 border rounded" />
+      <button id="searchBtn" class="px-4 py-2 bg-[#b45309] text-white rounded hover:bg-[#92400e]">Search</button>
+      <button id="micBtn" title="Speak" class="p-2 bg-[#ca8a04] text-white rounded hover:bg-[#a16207]">🎙️</button>
+      <button id="pronounceBtn" title="Pronounce" class="p-2 bg-[#16a34a] text-white rounded hover:bg-[#15803d]">🔊</button>
+      <button id="bookmarkBtn" title="Save Bookmark" class="p-2 bg-[#db2777] text-white rounded hover:bg-[#be185d]">💾</button>
+    </div>
+    <div id="historyDropdown" class="bg-[#fef3c7] rounded shadow p-2 mb-4 hidden"></div>
+
+    <div id="resultSection" class="hidden fade-in">
+      <h2 id="searchedWord" class="text-2xl font-semibold"></h2>
+      <div class="grid-results">
+        <div id="definitions"></div>
+        <div id="thesaurus"></div>
+        <div id="images">
+          <h3>Images:</h3>
+          <div class="image-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <button id="startQuizBtn" class="bg-[#92400e] text-white px-6 py-2 rounded hover:bg-[#9a3412]">Start your Quiz?</button>
+    </div>
+
+    <div id="quizArea" class="mt-4 hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="game.js"></script>
+  <script src="bookmark.js"></script>
+  
+</body>
+</html>
